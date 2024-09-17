@@ -43,7 +43,7 @@ def sdfs(X_train, X_val, X_test, y_train, y_val, y_test,
         )
     
     extended_X_train = concat_feature_sets(X_train, dynamic_features_trained)
-    extended_X_val = (X_val, X_train, dynamic_features_trained)
+    extended_X_val = concat_dfs_to_test_samples(X_val, X_train, dynamic_features_trained)
     extended_X_test = concat_dfs_to_test_samples(X_test, X_train, dynamic_features_trained)
     
     return extended_X_train, extended_X_val, extended_X_test

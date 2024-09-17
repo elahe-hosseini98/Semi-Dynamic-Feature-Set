@@ -69,7 +69,7 @@ y_train, y_val, y_test = ...
 # Expand feature sets and train the model
 expanded_X_train, expanded_X_val, expanded_X_test = sdfs(
     X_train, X_val, X_test, y_train, y_val, y_test, 
-    dynamic_input_size=10, init_method='mean_std', distance_method='cosine'
+    dynamic_input_size=10, init_method='PCA', distance_method='minkowski'
 )
 ```
 ## License

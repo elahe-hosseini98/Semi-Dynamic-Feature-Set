@@ -9,7 +9,7 @@ import numpy as np
 from sdfs.concatenate_feature_sets import concat_feature_sets
 from sdfs.extend_test_samples import concat_dfs_to_test_samples
 
-def sdfs(X_train, X_val, X_test, y_train, y_val, y_test, 
+def sdfs(X_train, X_val, X_test, y_train, y_val, y_test, num_classes=None,
          dynamic_input_size=5, init_method='PCA', distance_method='minkowski'):
     """
     Semi-Dynamic Feature Set (SDFS) expansion and model training.
@@ -36,7 +36,7 @@ def sdfs(X_train, X_val, X_test, y_train, y_val, y_test,
     
     dynamic_features = init_method(X_train, dynamic_input_size=dynamic_input_size)
     
-    model = SDFS(static_input_size=X_train.shape[1], dynamic_input_size=dynamic_input_size, output_size=output_size)
+    model = SDFS(static_input_size=X_train.shape[1], dynamic_input_size=dynamic_input_size, output_size=num_classes)
     
     final_train_acc, final_train_loss, loss_values, dynamic_features_trained = train(
         model, X_train, y_train, X_val, y_val, dynamic_features

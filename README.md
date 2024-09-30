@@ -31,7 +31,7 @@ from sdfs.feature_expansion import sdfs
 
 # Assuming you have train, validation, and test sets ready:
 extended_X_train, extended_X_val, extended_X_test = sdfs(
-    X_train, X_val, X_test, y_train, y_val, y_test, 
+    X_train, X_val, X_test, y_train, y_val, y_test, num_clsses=num_clsses,
     dynamic_input_size=5, init_method='PCA', distance_method='minkowski'
 )
 ```

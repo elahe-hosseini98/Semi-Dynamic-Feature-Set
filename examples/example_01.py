@@ -10,7 +10,7 @@ def load_wine_quality_data(test_size=0.2, validation_size=None, random_state=42)
     df = pd.read_csv(r'examples/winequalityN.csv')
     
     for col in df.columns[df.isnull().any()]:
-        df[col].fillna(df[col].mean(), inplace = True)
+        df[col] =  df[col].fillna(df[col].mean())
         
     X = df.iloc[:, 1: -1].values
     y = (df.iloc[:, -1] > 6).astype(int).values  # Binary classification: Good (1) or not good (0)

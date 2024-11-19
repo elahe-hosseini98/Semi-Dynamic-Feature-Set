@@ -49,7 +49,7 @@ def run_example():
     # Create a DataFrame from the tensor and assign appropriate column names
     static_feature_columns = ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
                               'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density',
-                              'pH', 'sulphates', 'alcohol']  # Adjust as per your dataset
+                              'pH', 'sulphates', 'alcohol'] 
     dynamic_feature_columns = [f'Dynamic Feature {i}' for i in range(1, 5)]
 
 
